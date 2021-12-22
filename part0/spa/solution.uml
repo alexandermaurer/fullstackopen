@@ -1,0 +1,12 @@
+title exampleapp/spa
+
+Browser->Server: HTTP GET exampleapp/spa
+Server-->Browser: text/html content of main HTML document
+Browser->Server: HTTP GET exampleapp/main.css
+Server-->Browser: text/css content of main.css
+Browser->Server: HTTP GET exampleapps/spa.js
+Server-->Browser: application/javascript content of spa.js
+note left of Browser: web browser executes spa.js which request data.json
+Browser->Server: HTTP GET exampleapps/data.json
+Server-->Browser: application/json content of data.json
+note left of Browser: data is rendered using javascript

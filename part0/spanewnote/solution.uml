@@ -1,0 +1,9 @@
+title exampleapp/notes
+
+Browser->Server: HTTP POST [JSON] exampleapp/new_note_spa
+Server-->Browser: HTTP 201 Created
+
+note left of Browser: 
+After pressing the submit button the javascript pushes the 
+new message to the list and renders then sends new data to server
+end note

@@ -1,0 +1,14 @@
+title exampleapp/notes
+
+Browser->Server: HTTP POST exampleapp/new_note
+note right of Server: Application pushes the content of POST into an array
+Server-->Browser: HTTP Found exampleapp/notes
+note right of Browser: Redirect 302 Found
+Browser->Server: HTTP GET exampleapp/notes
+Server-->Browser: text/html content of main document
+Browser->Server: HTTP GET exampleapp/main.css
+Server-->Browser: text/css content of main.css
+Browser->Server: HTTP GET exampleapp/main.js
+Server-->Browser: application/javascript content of main.js
+note left of Browser: web browser executes main.js which request data.json
+Browser-->Server: HTTP GET exampleapp/data.json
