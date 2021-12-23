@@ -1,4 +1,3 @@
-import { getByPlaceholderText } from '@testing-library/react'
 import React, { useState } from 'react'
 
 const Button = (props) => (
@@ -44,6 +43,7 @@ const App = () => {
       }
     }
     return highestIndex
+    
   }
 
   return (
