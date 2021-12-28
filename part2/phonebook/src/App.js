@@ -1,15 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import { RenderPhonebook } from './components/RenderPhonebook'
 import { PersonForm } from './components/PersonForm'
 import { Filter } from './components/Filter'
 
 const App = () => {
 
-  const [persons, setPersons] = useState([
-    { name: 'Arto Hellas',
-      number: '1234567'
-    }
-  ])
+  const [persons, setPersons] = useState([])
 
 
   //STATES
@@ -18,6 +15,15 @@ const App = () => {
 
   const [showAll, setShowAll] = useState(true)
   const [filter, setFilter] = useState('')
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3001/persons')
+      .then(response => {
+        setPersons(response.data)
+      })
+  }, [])
+
 
   const addEntry = (event) => {
     event.preventDefault()
