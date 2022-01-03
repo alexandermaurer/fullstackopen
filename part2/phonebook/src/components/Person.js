@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const Person = ({ person }) => {
+export const Person = ({ person, deleteContact }) => {
   return (
-    <li>{person.name} {person.number}</li>
+    <li>{person.name} {person.number} <button onClick={() => deleteContact(person)}>delete</button></li>
   );
 };
